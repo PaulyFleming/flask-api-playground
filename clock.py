@@ -13,10 +13,12 @@ connection_url = "postgres://u7r96o31vp2hlk:pae99a023860272fca7f1e2af513f5611e66
 #    print('Test job runs every minute')
     
 @sched.scheduled_job('interval', seconds=15)
-def check_connection(connection_url):
+def check_connection(connection_url, name):
+    name = "DB1"
+    connection_url= connection_url
     try:
         conn = psycopg2.connect(connection_url)
-        print("Connection succesful at ", current_time)
+        print(f"Connection to {name} succesful at ", current_time)
     except:
         print("Connection failure at ", current_time)
         
