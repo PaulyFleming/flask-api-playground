@@ -18,24 +18,13 @@ def check_connection():
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S:%s")
     name = "DB1"
-    #global status
-    #if (status==False) :
-        #connection_url= connection_url
     try:
-        conn = psycopg2.connect(connection_url)
+        conn = psycopg2.connect(connection_url, connect_timeout=7)
         print(f"Connection to {name} succesful at {current_time}")
-        status = True
-        return status
+
     except:
         print(f"Connection to {name} failure at {current_time}")
-        status = False
-        return status
-    
-        
-        
 
-    #conn.close()
-    #print("Connection to closed at ", current_time)
         
 
     
