@@ -16,21 +16,18 @@ def test_job():
 @sched.scheduled_job('interval', seconds=15)
 def check_connection():
     name = "DB1"
-    global status
-    if (status==False) :
+    #global status
+    #if (status==False) :
         #connection_url= connection_url
-        try:
-            conn = psycopg2.connect(connection_url)
-
-            print(f"Connection to {name} succesful at ", current_time)
-            status = True
-            return status
-        except:
-            print(f"Connection to {name} failure at ", current_time)
-
-        
-    else:
-        print(conn.closed)
+    try:
+        conn = psycopg2.connect(connection_url)
+        print(f"Connection to {name} succesful at ", current_time)
+        status = True
+        return status
+    except:
+        print(f"Connection to {name} failure at ", current_time)
+        status = False
+        return status
     
         
         
