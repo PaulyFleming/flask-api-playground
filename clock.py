@@ -21,11 +21,11 @@ def check_connection():
         #connection_url= connection_url
     try:
         conn = psycopg2.connect(connection_url)
-        print(f"Connection to {name} succesful at ", current_time)
+        print(f"Connection to {name} succesful at ", now.strftime("%H:%M:%S:%s"))
         status = True
         return status
     except:
-        print(f"Connection to {name} failure at ", current_time)
+        print(f"Connection to {name} failure at ", now.strftime("%H:%M:%S:%s"))
         status = False
         return status
     
