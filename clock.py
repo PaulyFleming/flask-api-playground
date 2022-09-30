@@ -18,6 +18,7 @@ def check_connection():
     #connection_url= connection_url
     try:
         conn = psycopg2.connect(connection_url)
+        cur = conn.cursor()
         
         print(f"Connection to {name} succesful at ", current_time)
     except:
