@@ -55,16 +55,17 @@ down_since = 0
 #            print(f"Connection to {name} down since {down_since}. Retrying")
         
         
-names = DATABASES.keys() 
+names = DATABASES
 print(names)
 
 @sched.scheduled_job('interval', seconds=15)
 def test_connection():
     #databases = os.environ.get('DATABASES')
     #print(DATABASES)
-    for name in DATABASES:
-        name = DATABASES["name"]
-        connection_url = DATABASES["connection_url"]
+    for database in DATABASES:
+        
+        database["name"]
+        #connection_url = DATABASES["connection_url"]
         now = datetime.now()
         current_time = now.strftime("%H:%M:%S:%s")
         global down_since
