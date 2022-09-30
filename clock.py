@@ -22,12 +22,14 @@ def check_connection():
     down_since = 0
     name = "DB1"
     if (down_since == 0):
+        print(f"1 {down_since}")
         try:
             conn = psycopg2.connect(connection_url, connect_timeout=7)
             print(f"Connection to {name} succesful at {current_time}")
         except:
             print(f"Connection to {name} failure at {current_time}")
             down_since = current_time
+            print(f"2 {down_since}")
             return down_since
     else:
         try:
