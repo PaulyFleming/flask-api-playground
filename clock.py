@@ -16,6 +16,7 @@ def test_job():
 @sched.scheduled_job('interval', seconds=15)
 def check_connection():
     name = "DB1"
+    global status
     if (status==False) :
         #connection_url= connection_url
         try:
