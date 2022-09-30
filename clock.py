@@ -27,7 +27,9 @@ def check_connection():
         status = True
         return status
     except:
-        print(f"Connection to {name} failure")
+        print(f"Connection to {name} failure {current_time}")
+        failure_time = current_time
+        return failure_time
         status = False
         return status
     
