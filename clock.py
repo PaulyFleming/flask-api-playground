@@ -60,7 +60,7 @@ down_since = 0
 @sched.scheduled_job('interval', seconds=15)
 def test_connection():
     #databases = os.environ.get('DATABASES')
-    print(DATABASES)
+    #print(DATABASES)
     for name in DATABASES:
         name = DATABASES["name"]
         connection_url = DATABASES["connection_url"]
