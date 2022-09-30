@@ -62,7 +62,7 @@ print(names)
 def test_connection():
     #databases = os.environ.get('DATABASES')
     #print(DATABASES)
-    for name in DATABASES.keys():
+    for name in DATABASES.items():
         name = DATABASES["name"]
         connection_url = DATABASES["connection_url"]
         now = datetime.now()
