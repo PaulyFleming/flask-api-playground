@@ -3,7 +3,7 @@ import os
 
 app = Flask(__name__)
 
-development = os.environ.get('DEVELOPMENT') #TODO - create on Heroku 
+development = os.environ.get('DEVELOPMENT')
 
 # Define routes and methods here
 @app.route('/', methods=['GET'])
