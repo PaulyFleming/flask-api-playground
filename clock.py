@@ -4,7 +4,7 @@ import time, os
 from datetime import datetime   
 
 DATABASES = {
-    "name": "HEROKU_POSTGRESQL_STARTER_AMBER_URL",  "connection_url": "postgres://u2nro9e7skkvpa:p3c453fdeddc4fade1076e60667b7cd0f844e1093e36187faeef577de5d82b631@ec2-54-156-74-18.compute-1.amazonaws.com:5432/d9ba10ld43hpt2,
+    "name": "HEROKU_POSTGRESQL_STARTER_AMBER_URL",  "connection_url": "postgres://u2nro9e7skkvpa:p3c453fdeddc4fade1076e60667b7cd0f844e1093e36187faeef577de5d82b631@ec2-54-156-74-18.compute-1.amazonaws.com:5432/d9ba10ld43hpt2",
     "name": "HEROKU_POSTGRESQL_STARTER_BLUE_URL", "connection_url": "postgres://u5huut0jc85fen:pb31b56642f476f656e5f156219bf782052be15dfe5e192114a2953058293f025@ec2-34-199-172-182.compute-1.amazonaws.com:5432/dquge67c0u7vr",
     "name": "HEROKU_POSTGRESQL_STARTER_COBALT_URL", "connection_url": "postgres://u2ebfjqukd7m1n:p115983ed88d2cb058fd6517e3fc699b66c288ea9ad076a93c456a658d0bf8b01@ec2-34-199-137-141.compute-1.amazonaws.com:5432/d2cua5t5e8i2me",
     "name": "HEROKU_POSTGRESQL_STARTER_GRAY_URL", "connection_url": "postgres://u9hjn4ggoehlup:pf8aa15eac5abd5922e21d5118a5a6487615bd5e28bd4e39d28af778d32f19055@ec2-3-228-90-88.compute-1.amazonaws.com:5432/d3cs8tbk044po",
