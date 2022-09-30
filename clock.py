@@ -64,8 +64,8 @@ def test_connection():
     #print(DATABASES)
     for database in DATABASES:
         
-        database["name"]
-        #connection_url = DATABASES["connection_url"]
+        name = database["name"]
+        connection_url = database["connection_url"]
         now = datetime.now()
         current_time = now.strftime("%H:%M:%S:%s")
         global down_since
