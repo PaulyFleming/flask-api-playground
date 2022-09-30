@@ -48,7 +48,7 @@ down_since = 0
 def test_connection():
     databases = os.environ.get('DATABASES')
     print(databases)
-    for key in databases:
+    for databases["name"] in databases:
         name = databases["name"]
         connection_url = databases["connection_url"]
         now = datetime.now()
