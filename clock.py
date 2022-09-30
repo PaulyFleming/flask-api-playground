@@ -18,9 +18,9 @@ def test_job():
 def check_connection():
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S:%s")
-    last_succes_conn = null
-    last_fail_begin = null 
-    last_fail_end = null
+    #last_succes_conn = 0
+    last_fail_begin = 0 
+    #last_fail_end = 0
     name = "DB1"
     #global status
     #if (status==False) :
@@ -28,12 +28,12 @@ def check_connection():
     try:
         conn = psycopg2.connect(connection_url)
         print(f"Connection to {name} succesful at {current_time}")
-        last_fail_begin == null
+        last_fail_begin == 0
         status = True
         return last_fail_begin
     except:
         #print(f"Connection to {name} failure {current_time}")
-        if (last_fail_begin == null):
+        if (last_fail_begin == 0):
             last_fail_begin = current_time
             print(f"Connection to {name} failure at {last_fail_begin}")
         else:
