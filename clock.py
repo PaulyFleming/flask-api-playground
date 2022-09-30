@@ -7,6 +7,7 @@ sched = BlockingScheduler()
 now = datetime.now()
 current_time = now.strftime("%H:%M:%S:%s")
 connection_url = "postgres://u7r96o31vp2hlk:pae99a023860272fca7f1e2af513f5611e66ce6437db3934837fe732eb9ecbc6e@ec2-54-210-170-57.compute-1.amazonaws.com:5432/dnvab2bl745rg"
+status = False
 
 @sched.scheduled_job('interval', minutes=2)
 def test_job():
@@ -15,20 +16,26 @@ def test_job():
 @sched.scheduled_job('interval', seconds=15)
 def check_connection():
     name = "DB1"
-    #connection_url= connection_url
-    try:
-        conn = psycopg2.connect(connection_url)
-        cur = conn.cursor()
+    if (status==False) :
+        #connection_url= connection_url
+        try:
+            conn = psycopg2.connect(connection_url)
+
+            print(f"Connection to {name} succesful at ", current_time)
+            status = True
+            return status
+        except:
+            print(f"Connection to {name} failure at ", current_time)
+
         
-        print(f"Connection to {name} succesful at ", current_time)
-    except:
-        print(f"Connection to {name} failure at ", current_time)
+    else:
+        print(conn.closed)
+    
         
-    print(conn.closed)
         
 
     #conn.close()
-    print("Connection closed at ", current_time)
+    #print("Connection to closed at ", current_time)
         
 
     
