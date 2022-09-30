@@ -5,7 +5,7 @@ from datetime import datetime
 
 sched = BlockingScheduler()
 
-current_time = now.strftime("%H:%M:%S:%s")
+#current_time = now.strftime("%H:%M:%S:%s")
 connection_url = "postgres://u7r96o31vp2hlk:pae99a023860272fca7f1e2af513f5611e66ce6437db3934837fe732eb9ecbc6e@ec2-54-210-170-57.compute-1.amazonaws.com:5432/dnvab2bl745rg"
 status = False
 
