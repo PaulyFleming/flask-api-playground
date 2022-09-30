@@ -15,6 +15,7 @@ def test_job():
     
 @sched.scheduled_job('interval', seconds=15)
 def check_connection():
+    now = datetime.now()
     current_time = now.strftime("%H:%M:%S:%s")
     name = "DB1"
     #global status
