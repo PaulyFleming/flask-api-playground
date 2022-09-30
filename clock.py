@@ -17,14 +17,26 @@ def test_job():
 def check_connection():
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S:%s")
+    down_since = 0
     name = "DB1"
-    try:
-        conn = psycopg2.connect(connection_url, connect_timeout=7)
-        print(f"Connection to {name} succesful at {current_time}")
-
-    except:
-        print(f"Connection to {name} failure at {current_time}")
-
+    if (down_since == 0):
+        try:
+            conn = psycopg2.connect(connection_url, connect_timeout=7)
+            print(f"Connection to {name} succesful at {current_time}")
+        except:
+            print(f"Connection to {name} failure at {current_time}")
+            down_since = current_time
+            return down_since
+    else:
+        try:
+            conn = psycopg2.connect(connection_url, connect_timeout=7)
+            print(f"Connection to {name} succesful at {current_time}")
+            down_since = 0
+            return down_since
+        except:
+            print(f"Connection to {name} down since {down_since}. Retrying")
+        
+        
         
 
     
