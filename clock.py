@@ -55,7 +55,8 @@ down_since = 0
 #            print(f"Connection to {name} down since {down_since}. Retrying")
         
         
-        
+names = DATABASES.keys() 
+print(names)
 
 @sched.scheduled_job('interval', seconds=15)
 def test_connection():
