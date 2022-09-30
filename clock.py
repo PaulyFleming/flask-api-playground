@@ -19,7 +19,7 @@ def test_job():
 def check_connection():
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S:%s")
-    #down_since = 0
+    global down_since
     name = "DB1"
     if (down_since == 0):
         print(f"1 {down_since}")
