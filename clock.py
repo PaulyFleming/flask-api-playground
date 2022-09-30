@@ -9,6 +9,8 @@ sched = BlockingScheduler()
 connection_url = "postgres://u7r96o31vp2hlk:pae99a023860272fca7f1e2af513f5611e66ce6437db3934837fe732eb9ecbc6e@ec2-54-210-170-57.compute-1.amazonaws.com:5432/dnvab2bl745rg"
 status = False
 
+down_since = 0
+
 @sched.scheduled_job('interval', minutes=2)
 def test_job():
     print('Test job runs every 2 minutes')
