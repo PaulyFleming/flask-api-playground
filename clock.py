@@ -1,6 +1,6 @@
 from apscheduler.schedulers.blocking import BlockingScheduler 
 import psycopg2
-import time 
+import time, os
 from datetime import datetime   
 
 sched = BlockingScheduler()
